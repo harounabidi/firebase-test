@@ -6,6 +6,8 @@ import Menu from "./nav-menu"
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  console.log(menuOpen)
   return (
     <header className='w-full bg-background px-4'>
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
