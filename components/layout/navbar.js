@@ -2,8 +2,11 @@ import Link from "next/link"
 import Hamberger from "@components/icons/hamberger"
 import logo from "@public/images/logo.png"
 import Image from "next/image"
+import { useState } from "react"
 
 export default function Navbar({ menuOpen, setMenuOpen }) {
+  const [authenticated, setAuthenticated] = useState(false)
+
   return (
     <nav className='z-50 flex w-full items-center justify-between py-5 md:px-12'>
       <div className='flex justify-center items-stretch gap-6'>
@@ -24,19 +27,24 @@ export default function Navbar({ menuOpen, setMenuOpen }) {
       </div>
 
       <div className='flex gap-2'>
-        <Link
-          href='/signin'
-          aria-label='logo'
-          className=' px-5 py-3 font-inter max-md:hidden text-sm  font-semibold rounded-full'>
-          Sign in
-        </Link>
-
-        <Link
-          href='/signup'
-          aria-label='logo'
-          className='bg-stone-900 font-inter transition-colors duration-300 hover:bg-stone-700 text-sm text-white font-semibold px-5 py-3 rounded-full'>
-          Sign up
-        </Link>
+        {authenticated ? (
+          <div className='w-10 h-10 bg-stone-300 rounded-full' />
+        ) : (
+          <>
+            <Link
+              href='/signin'
+              aria-label='logo'
+              className=' px-5 py-3 font-mona max-md:hidden text-sm  font-semibold rounded-full'>
+              Sign in
+            </Link>
+            <Link
+              href='/signup'
+              aria-label='logo'
+              className='bg-stone-900 font-mona transition-colors duration-300 hover:bg-stone-700 text-sm text-white font-semibold px-5 py-3 rounded-full'>
+              Sign up
+            </Link>
+          </>
+        )}
       </div>
     </nav>
   )

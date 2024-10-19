@@ -20,7 +20,7 @@ export default function Page() {
 
     setLoading(true)
 
-    const { result, error } = await signIn(email, password)
+    const { data, error } = await signIn(email, password)
 
     if (error) {
       setLoading(false)
@@ -28,24 +28,25 @@ export default function Page() {
     }
 
     setLoading(false)
-    const idToken = await result.user.getIdToken()
-    console.log(idToken)
-    // return router.push("/")
+
+    console.log(data)
+
+    return router.push("/")
   }
 
   return (
-    <section className='p-10 flex flex-col gap-6 lg:p-36 w-full'>
+    <section className='py-10 px-6 flex flex-col gap-6 lg:p-36 w-full'>
       <div className='w-full flex md:hidden'>
         <Link
           href='/'
-          className='transition-colors border hover:bg-stone-100 rounded-full py-1 px-3'>
+          className='transition-colors border border-stone-300 hover:border-stone-600 hover:bg-stone-100 rounded-full py-1 px-3'>
           <ChevronLeft color='black' size='30' />
         </Link>
       </div>
 
       <div className='w-full lg:max-w-96'>
         <h1 className='font-black max-md:text-center mb-10 text-2xl'>
-          Sign In to Klark
+          Sign in to Klark
         </h1>
 
         <div className=''>

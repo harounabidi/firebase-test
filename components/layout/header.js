@@ -8,7 +8,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className='w-full bg-background px-4'>
+    <header className='w-full bg-background px-6'>
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Menu open={menuOpen} setOpen={setMenuOpen} />
     </header>

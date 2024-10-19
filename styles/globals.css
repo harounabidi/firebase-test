@@ -36,7 +36,8 @@
     --radius: 0.5em;
 
     --font-source: var(--font-source-serif);
-    --font-inter: var(--font-inter);
+    /* --font-inter: var(--font-inter); */
+    --font-mona-sans: var(--font-mona-sans);
   }
 }
 

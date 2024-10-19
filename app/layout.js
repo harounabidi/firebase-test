@@ -1,11 +1,12 @@
 import { AuthProvider } from "@providers/auth-provider"
 import "@styles/globals.css"
-import { Inter, Source_Serif_4 } from "next/font/google"
+import { Source_Serif_4 } from "next/font/google"
+import localFont from "next/font/local"
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
+const monaSans = localFont({
+  src: "./fonts/Mona-Sans.woff2",
+  variable: "--font-mona-sans",
+  weight: "100 900",
 })
 
 const sourceSerif = Source_Serif_4({
@@ -23,10 +24,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body
-        className={`${inter.variable} ${sourceSerif.variable} antialiased  min-h-screen`}>
-        {/* <AuthProvider> */}
-        {children}
-        {/* </AuthProvider> */}
+        className={`
+        ${sourceSerif.variable}
+        ${monaSans.variable}
+        antialiased  min-h-screen`}>
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   )

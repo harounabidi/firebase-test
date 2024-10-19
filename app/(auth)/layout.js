@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import logo from "@public/images/logo.png"
+import logo from "@public/images/logo-white.png"
 
 export default function layout({ children }) {
   return (
@@ -8,7 +8,7 @@ export default function layout({ children }) {
       <section className='bg-stone-300 relative object-cover min-h-svh w-full lg:w-1/3 hidden md:block'>
         <Link
           href='/'
-          className='absolute z-50 hidden md:block text-white font-semibold transition-colors hover:text-stone-400 py-2 px-5 top-6 text-2xl left-10'>
+          className='absolute z-50 hidden md:block transition-all hover:opacity-60 top-6 left-6'>
           <Image src={logo} width={80} height='auto' alt='logo' />
         </Link>
 
@@ -18,7 +18,7 @@ export default function layout({ children }) {
           autoPlay
           muted
           loop
-          src='https://res.cloudinary.com/dlez32qbe/video/upload/v1707587525/pfe/arqmkgkiddqpj76vugvh.mp4'
+          src='https://res.cloudinary.com/dlez32qbe/video/upload/v1707587525/pfe/fjo5ldlesnjeh5mlje5m.mp4'
         />
       </section>
 
