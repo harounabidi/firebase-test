@@ -1,3 +1,4 @@
+import { AuthProvider } from "@providers/auth-provider"
 import "@styles/globals.css"
 import { Inter, Source_Serif_4 } from "next/font/google"
 
@@ -14,8 +15,8 @@ const sourceSerif = Source_Serif_4({
 })
 
 export const metadata = {
-  title: "Firebase dashboard",
-  description: "Firebase dashboard",
+  title: "Klark",
+  description: "Klark App",
 }
 
 export default function RootLayout({ children }) {
@@ -23,7 +24,7 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <body
         className={`${inter.variable} ${sourceSerif.variable} antialiased  min-h-screen`}>
-        {children}
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   )

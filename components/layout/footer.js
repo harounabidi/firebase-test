@@ -2,7 +2,7 @@ import Facebook from "@components/icons/facebook"
 import Instagram from "@components/icons/Instagram"
 import Twitter from "@components/icons/twitter"
 import Link from "next/link"
-import logo from "@public/logo.png"
+import logo from "@public/images/logo.png"
 import Image from "next/image"
 
 export default function Footer() {
@@ -11,7 +11,7 @@ export default function Footer() {
       <div className='flex  justify-between'>
         <div className='flex gap-4 items-center'>
           <Link href='/' aria-label='logo' className='text-2xl mr-16 font-bold'>
-            <Image src={logo} width={100} alt='logo' />
+            <Image src={logo} width={100} height='auto' alt='logo' />
           </Link>
 
           <Link href='/' className='font-semibold'>
@@ -30,7 +30,7 @@ export default function Footer() {
             rel='noopener noreferrer'
             className='hover:text-stone-500 transition-colors duration-300'
             target='_blank'
-            href='https://x.com'>
+            href='https://x.com/KlarkApp'>
             <Twitter className='w-6 h-6' />
           </Link>
           <Link
@@ -46,7 +46,7 @@ export default function Footer() {
             rel='noopener noreferrer'
             className='hover:text-stone-500 transition-colors duration-300'
             target='_blank'
-            href='https://instagram.com'>
+            href='https://www.instagram.com/klarkapp/'>
             <Instagram className='w-6 h-6' />
           </Link>
         </div>

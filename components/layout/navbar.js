@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Hamberger from "@components/icons/hamberger"
-import logo from "@public/logo.png"
+import logo from "@public/images/logo.png"
 import Image from "next/image"
 
 export default function Navbar({ menuOpen, setMenuOpen }) {
@@ -19,7 +19,7 @@ export default function Navbar({ menuOpen, setMenuOpen }) {
         </div>
 
         <Link href='/' aria-label='logo' className='text-lg'>
-          <Image src={logo} width={100} alt='logo' />
+          <Image src={logo} width={100} height='auto' alt='logo' />
         </Link>
       </div>
 

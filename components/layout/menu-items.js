@@ -28,17 +28,7 @@ export default function MenuItems({ pathname, onItemClick, isOpen }) {
       {trail.map((props, index) => {
         const item = activeLinks[index]
         return (
-          <animated.li
-            key={`${item.link}-${animationKey}`}
-            style={props}
-            className={`${
-              pathname === item.link ||
-              (item.link === "/" &&
-                (pathname === "/" || pathname === `/${locale}`)) ||
-              pathname === `/${item.link}`
-                ? "bg-primary/5"
-                : ""
-            }`}>
+          <animated.li key={`${item.link}-${animationKey}`} style={props}>
             <Link
               href={item.link}
               aria-label={item.title}

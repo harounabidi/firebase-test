@@ -2,7 +2,7 @@
 
 import Google from "@components/icons/google"
 import Loading from "@components/icons/loading"
-import signIn from "@firebase/siginin"
+import signIn from "@firebase/signin"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
@@ -27,12 +27,13 @@ export default function Page() {
     }
 
     setLoading(false)
-    console.log(result)
-    return router.push("/admin")
+    const idToken = await result.user.getIdToken()
+    console.log(idToken)
+    // return router.push("/")
   }
 
   return (
-    <div className='p-10 lg:p-36 w-full'>
+    <section className='p-10 lg:p-36 w-full'>
       <div className='w-full lg:max-w-96'>
         <h1 className='font-black max-md:text-center mb-10 text-2xl'>
           Sign In to Klark
@@ -102,6 +103,6 @@ export default function Page() {
           </span>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

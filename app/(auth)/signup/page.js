@@ -32,7 +32,7 @@ export default function Page() {
   }
 
   return (
-    <div className='p-10 lg:p-36 w-full'>
+    <section className='p-10 lg:p-36 w-full'>
       <div className='w-full lg:max-w-96'>
         <h1 className='font-black text-2xl max-md:text-center mb-10'>
           Sign up to Klark
@@ -97,6 +97,6 @@ export default function Page() {
           </span>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
