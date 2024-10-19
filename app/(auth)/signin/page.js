@@ -35,7 +35,7 @@ export default function Page() {
     <div className='p-10 lg:p-36 w-full'>
       <div className='w-full lg:max-w-96'>
         <h1 className='font-black max-md:text-center mb-10 text-2xl'>
-          Sign In to APP
+          Sign In to Klark
         </h1>
 
         <div className=''>

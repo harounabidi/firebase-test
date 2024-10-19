@@ -1,22 +1,26 @@
 import Link from "next/link"
 import Hamberger from "@components/icons/hamberger"
+import logo from "@public/logo.png"
+import Image from "next/image"
 
 export default function Navbar({ menuOpen, setMenuOpen }) {
   return (
     <nav className='z-50 flex w-full items-center justify-between py-5 md:px-12'>
-      <Link href='/' aria-label='logo' className='text-lg hidden md:block'>
-        Logo
-      </Link>
+      <div className='flex justify-center gap-4'>
+        <div className='z-50 md:hidden flex flex-row items-center gap-3'>
+          <Hamberger
+            size='2em'
+            className='z-[30] cursor-pointer'
+            toggle={menuOpen}
+            toggled={setMenuOpen}
+            duration='.3'
+            rounded
+          />
+        </div>
 
-      <div className='z-50 md:hidden flex flex-row items-center gap-3'>
-        <Hamberger
-          size='2em'
-          className='z-[30] cursor-pointer'
-          toggle={menuOpen}
-          toggled={setMenuOpen}
-          duration='.3'
-          rounded
-        />
+        <Link href='/' aria-label='logo' className='text-lg'>
+          <Image src={logo} width={100} alt='logo' />
+        </Link>
       </div>
 
       <div className='flex gap-2'>

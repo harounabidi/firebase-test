@@ -28,14 +28,14 @@ export default function Page() {
 
     setLoading(false)
     console.log(result)
-    return router.push("/admin")
+    // return router.push("/")
   }
 
   return (
     <div className='p-10 lg:p-36 w-full'>
       <div className='w-full lg:max-w-96'>
         <h1 className='font-black text-2xl max-md:text-center mb-10'>
-          Sign up to APP
+          Sign up to Klark
         </h1>
 
         <div className='w-full'>
