@@ -1,5 +1,6 @@
 "use client"
 
+import ChevronLeft from "@components/icons/chevron-left"
 import Google from "@components/icons/google"
 import Loading from "@components/icons/loading"
 import signUp from "@firebase/signup"
@@ -32,7 +33,15 @@ export default function Page() {
   }
 
   return (
-    <section className='p-10 lg:p-36 w-full'>
+    <section className='p-10 flex flex-col gap-6 lg:p-36 w-full'>
+      <div className='w-full flex md:hidden'>
+        <Link
+          href='/'
+          className='transition-colors border hover:bg-stone-100 rounded-full py-1 px-3'>
+          <ChevronLeft color='black' size='30' />
+        </Link>
+      </div>
+
       <div className='w-full lg:max-w-96'>
         <h1 className='font-black text-2xl max-md:text-center mb-10'>
           Sign up to Klark

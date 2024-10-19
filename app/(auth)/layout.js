@@ -4,7 +4,7 @@ import logo from "@public/images/logo.png"
 
 export default function layout({ children }) {
   return (
-    <div className='flex flex-row items-stretch h-full overflow-hidden'>
+    <div className='flex relative flex-row items-stretch h-full overflow-hidden'>
       <section className='bg-stone-300 relative object-cover min-h-svh w-full lg:w-1/3 hidden md:block'>
         <Link
           href='/'
@@ -21,6 +21,7 @@ export default function layout({ children }) {
           src='https://res.cloudinary.com/dlez32qbe/video/upload/v1707587525/pfe/arqmkgkiddqpj76vugvh.mp4'
         />
       </section>
+
       {children}
     </div>
   )

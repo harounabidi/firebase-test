@@ -24,7 +24,9 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <body
         className={`${inter.variable} ${sourceSerif.variable} antialiased  min-h-screen`}>
-        <AuthProvider>{children}</AuthProvider>
+        {/* <AuthProvider> */}
+        {children}
+        {/* </AuthProvider> */}
       </body>
     </html>
   )

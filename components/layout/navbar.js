@@ -6,7 +6,7 @@ import Image from "next/image"
 export default function Navbar({ menuOpen, setMenuOpen }) {
   return (
     <nav className='z-50 flex w-full items-center justify-between py-5 md:px-12'>
-      <div className='flex justify-center gap-4'>
+      <div className='flex justify-center items-stretch gap-6'>
         <div className='z-50 md:hidden flex flex-row items-center gap-3'>
           <Hamberger
             size='2em'
@@ -18,8 +18,8 @@ export default function Navbar({ menuOpen, setMenuOpen }) {
           />
         </div>
 
-        <Link href='/' aria-label='logo' className='text-lg'>
-          <Image src={logo} width={100} height='auto' alt='logo' />
+        <Link href='/' aria-label='logo'>
+          <Image src={logo} width={80} height='auto' alt='logo' />
         </Link>
       </div>
 
