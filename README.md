@@ -30,7 +30,7 @@ in this situation it is a good practice to use middleware to check if the user i
 ## Install firebase
 
 ```
-npm install firebase
+npm i
 ```
 
 ## Modify .env.example

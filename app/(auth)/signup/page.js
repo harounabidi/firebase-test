@@ -74,7 +74,6 @@ export default function Page() {
               type='email'
               name='email'
               id='email'
-              // placeholder='Email'
             />
           </label>
           <label htmlFor='password' className='space-y-1'>
@@ -86,11 +85,12 @@ export default function Page() {
               type='password'
               name='password'
               id='password'
-              // placeholder='Password'
             />
           </label>
           <button
-            className='bg-stone-900 flex items-center justify-center font-semibold text-white hover:bg-stone-700 rounded-lg h-14 w-full transition-colors duration-300'
+            disabled
+            className='bg-stone-900
+            disabled:cursor-not-allowed flex items-center justify-center font-semibold text-white disabled:bg-stone-400 hover:bg-stone-700 rounded-lg h-14 w-full transition-colors duration-300'
             type='submit'>
             {loading ? <Loading /> : "Sign up"}
           </button>

@@ -1,37 +1,54 @@
 "use client"
 
+import { useState } from "react"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
 import ChevronLeft from "@components/icons/chevron-left"
 import Google from "@components/icons/google"
 import Loading from "@components/icons/loading"
 import signIn from "@firebase/signin"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { useState } from "react"
 
 export default function Page() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
 
   const router = useRouter()
 
   const handleSignInForm = async (event) => {
     event.preventDefault()
-
     setLoading(true)
+    setError("")
 
-    const { data, error } = await signIn(email, password)
+    const { result, error } = await signIn(email, password)
 
     if (error) {
       setLoading(false)
-      return console.log(error)
+      // Set a user-friendly error message based on the error code
+      switch (error.code) {
+        case "auth/user-not-found":
+          setError(
+            "No account found with this email. Please check your email or sign up."
+          )
+          break
+        case "auth/wrong-password":
+          setError("Incorrect password. Please try again.")
+          break
+        case "auth/invalid-email":
+          setError("Invalid email address. Please enter a valid email.")
+          break
+        case "auth/too-many-requests":
+          setError("Too many failed login attempts. Please try again later.")
+          break
+        default:
+          setError("An error occurred during sign in. Please try again.")
+      }
+      return
     }
 
     setLoading(false)
-
-    console.log(data)
-
-    return router.push("/")
+    router.push("/")
   }
 
   return (
@@ -64,6 +81,14 @@ export default function Page() {
           </div>
         </div>
 
+        {error && (
+          <div
+            className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative my-4'
+            role='alert'>
+            <span className='block sm:inline'>{error}</span>
+          </div>
+        )}
+
         <form onSubmit={handleSignInForm} className='flex my-5 flex-col gap-6'>
           <label htmlFor='email' className='space-y-1'>
             <span className='font-semibold'>Email</span>
@@ -74,7 +99,6 @@ export default function Page() {
               type='email'
               name='email'
               id='email'
-              // placeholder='Email'
             />
           </label>
           <label htmlFor='password' className='space-y-1'>
@@ -93,7 +117,6 @@ export default function Page() {
               type='password'
               name='password'
               id='password'
-              // placeholder='Password'
             />
           </label>
           <button

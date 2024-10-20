@@ -25,6 +25,20 @@ export const AuthContextProvider = ({ children }) => {
       setLoading(false)
     })
 
+    // const response = await fetch(process.env.NEXT_PUBLIC_API_URL, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({ idToken }),
+    // })
+
+    // if (!response.ok) {
+    //   throw new Error("Failed to authenticate with the server")
+    // }
+
+    // data = await response.json()
+
     return () => unsubscribe()
   }, [])
 
