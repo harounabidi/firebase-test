@@ -6,15 +6,14 @@ import { links } from "./nav-list-items"
 import { animated, useTrail } from "@react-spring/web"
 import { useAuthContext } from "@providers/auth-provider"
 
-export default function MenuItems({ pathname, onItemClick, isOpen }) {
+export default function MenuItems({ onItemClick, isOpen }) {
   const [animationKey, setAnimationKey] = useState(0)
 
   const { user } = useAuthContext()
 
   useEffect(() => {
-    if (user != null)
-      links.find((item) => item.title === "Sign in").active = false
-  }, [user])
+    if (user) links.find((item) => item.link === "/signin").active = false
+  }, [])
 
   const activeLinks = links.filter((item) => item.active)
 

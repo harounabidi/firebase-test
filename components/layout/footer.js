@@ -14,7 +14,7 @@ export default function Footer() {
             href='/'
             aria-label='logo'
             className='text-2xl lg:mr-10 font-bold'>
-            <Image src={logo} width={100} height='auto' alt='logo' />
+            <Image src={logo} width={100} alt='logo' className='h-auto' />
           </Link>
         </div>
         <div className='flex gap-4 lg:gap-8'>

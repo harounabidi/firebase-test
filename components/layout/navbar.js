@@ -10,6 +10,7 @@ import logo from "@/public/images/logo.png"
 import useClickOutsideHandler from "@hooks/useClickOutside"
 import { getAuth } from "firebase/auth"
 import firebase from "@firebase/config"
+import { useRouter } from "next/navigation"
 
 export default function Navbar({ menuOpen, setMenuOpen }) {
   const { user } = useAuthContext()
@@ -32,7 +33,7 @@ export default function Navbar({ menuOpen, setMenuOpen }) {
         </div>
 
         <Link href='/' aria-label='logo'>
-          <Image src={logo} width={80} height={80} alt='logo' />
+          <Image priority src={logo} width={80} alt='logo' className='h-auto' />
         </Link>
       </div>
 
@@ -74,10 +75,12 @@ export default function Navbar({ menuOpen, setMenuOpen }) {
 function UserDropdown({ user, dropdownOpen, setDropdownOpen }) {
   const menuRef = useRef()
   useClickOutsideHandler(menuRef, dropdownOpen, setDropdownOpen)
+  const router = useRouter()
 
   const handleLogout = () => {
     const auth = getAuth(firebase)
     auth.signOut()
+    router.refresh()
   }
 
   return (
@@ -91,6 +94,11 @@ function UserDropdown({ user, dropdownOpen, setDropdownOpen }) {
         href='/profile'
         className='block px-4 py-4 text-sm text-stone-700 hover:bg-stone-100'>
         Profile
+      </Link>
+      <Link
+        href='/settings'
+        className='block px-4 py-4 text-sm text-stone-700 hover:bg-stone-100'>
+        Settings
       </Link>
       <button
         onClick={handleLogout}

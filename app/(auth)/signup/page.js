@@ -28,8 +28,7 @@ export default function Page() {
     }
 
     setLoading(false)
-    console.log(result)
-    // return router.push("/")
+    return router.push("/")
   }
 
   return (

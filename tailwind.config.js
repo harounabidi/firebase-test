@@ -12,7 +12,6 @@ module.exports = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        // inter: "var(--font-inter)",
         source: "var(--font-source-serif)",
         mona: "var(--font-mona-sans)",
       },

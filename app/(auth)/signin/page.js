@@ -25,7 +25,6 @@ export default function Page() {
 
     if (error) {
       setLoading(false)
-      // Set a user-friendly error message based on the error code
       switch (error.code) {
         case "auth/user-not-found":
           setError(
