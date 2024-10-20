@@ -25,7 +25,7 @@ Development of a Dashboard with Firebase Authentication
 
 The project is a dashboard that requires authentication to access. The user must log in to access the dashboard. The user must provide an email and password to log in. The user must be able to log out of the dashboard. The user must be able to see their user information and company information on the dashboard.
 
-in this situation it is recommended to use middleware to check if the user is authenticated before accessing the dashboard. but in this project, I used context API to manage the global state.
+in this situation it is a good practice to use middleware to check if the user is authenticated before accessing the dashboard. but in this project, I used context API to manage the global state.
 
 ## Install firebase
 

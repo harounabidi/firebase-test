@@ -8,6 +8,8 @@ import Hamberger from "@/components/icons/hamberger"
 import User from "@/components/icons/user"
 import logo from "@/public/images/logo.png"
 import useClickOutsideHandler from "@hooks/useClickOutside"
+import { getAuth } from "firebase/auth"
+import firebase from "@firebase/config"
 
 export default function Navbar({ menuOpen, setMenuOpen }) {
   const { user } = useAuthContext()
@@ -70,14 +72,12 @@ export default function Navbar({ menuOpen, setMenuOpen }) {
 }
 
 function UserDropdown({ user, dropdownOpen, setDropdownOpen }) {
-  // console.log(user)
-
   const menuRef = useRef()
   useClickOutsideHandler(menuRef, dropdownOpen, setDropdownOpen)
 
   const handleLogout = () => {
-    // Add logout logic here
-    console.log("Logout clicked")
+    const auth = getAuth(firebase)
+    auth.signOut()
   }
 
   return (

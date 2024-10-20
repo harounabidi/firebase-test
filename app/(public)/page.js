@@ -5,8 +5,11 @@ import iphone2 from "@/public/images/i2.png"
 import Image from "next/image"
 import { animated, useSpring, useInView } from "@react-spring/web"
 import Link from "next/link"
+import { useAuthContext } from "@providers/auth-provider"
 
 export default function Home() {
+  const { user } = useAuthContext()
+
   const [heroRef, heroInView] = useInView({
     once: true,
     rootMargin: "0px 0px -10% 0px",
@@ -106,11 +109,13 @@ export default function Home() {
           management.
         </p>
 
-        <Link
-          href='/signup'
-          className='bg-stone-900 mt-8 text-white font-semibold hover:bg-stone-700 rounded-full h-14 px-6 transition-colors duration-300 flex items-center justify-center'>
-          Get started
-        </Link>
+        {!user && (
+          <Link
+            href='/signup'
+            className='bg-stone-900 mt-8 text-white font-semibold hover:bg-stone-700 rounded-full h-14 px-6 transition-colors duration-300 flex items-center justify-center'>
+            Get started
+          </Link>
+        )}
       </animated.section>
 
       <animated.section
