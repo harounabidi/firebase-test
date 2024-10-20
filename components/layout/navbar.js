@@ -85,7 +85,7 @@ function UserDropdown({ user, dropdownOpen, setDropdownOpen }) {
       ref={menuRef}
       className='absolute border-[.5px] right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 z-10'>
       <span className='block px-4 py-3 font-semibold border-b w-full'>
-        {user.displayName || user.email || user.phoneNumber}
+        {`${user.firstName} ${user.lastName}` || user.email || user.phoneNumber}
       </span>
       <Link
         href='/profile'
