@@ -1,4 +1,4 @@
-import { AuthProvider } from "@providers/auth-provider"
+import { AuthContextProvider } from "@providers/auth-provider"
 import "@styles/globals.css"
 import { Source_Serif_4 } from "next/font/google"
 import localFont from "next/font/local"
@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
         ${sourceSerif.variable}
         ${monaSans.variable}
         antialiased  min-h-screen`}>
-        <AuthProvider>{children}</AuthProvider>
+        <AuthContextProvider>{children}</AuthContextProvider>
       </body>
     </html>
   )
