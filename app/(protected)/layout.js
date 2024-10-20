@@ -6,7 +6,7 @@ import { useEffect } from "react"
 import Footer from "@components/layout/footer"
 import Header from "@components/layout/header"
 
-export default function layout({ children }) {
+export default function Layout({ children }) {
   const { user } = useAuthContext()
   const router = useRouter()
 
