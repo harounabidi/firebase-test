@@ -65,3 +65,23 @@ body {
 .animate-scroll {
   animation: scroll 20s linear infinite;
 }
+
+.card {
+  perspective: 800px;
+}
+
+.card__content {
+  transform-style: preserve-3d;
+}
+
+.card:hover .card__content {
+  transform: rotateX(0.5turn);
+}
+
+.card__front,
+.card__back {
+  backface-visibility: hidden;
+}
+.card__back {
+  transform: rotateX(0.5turn);
+}

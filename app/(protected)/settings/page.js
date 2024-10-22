@@ -1,6 +1,7 @@
 export default function page() {
   return (
-    <div className='p-6 lg:px-24 w-full min-h-screen'>
+    <div>
+      <h1 className="text-3xl font-semibold">Settings</h1>
       This page is not implemented yet
     </div>
   )
