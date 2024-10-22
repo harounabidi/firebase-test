@@ -8,12 +8,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
       },
       fontFamily: {
-        source: "var(--font-source-serif)",
-        mona: "var(--font-mona-sans)",
+        inter: "var(--font-inter)",
       },
     },
   },

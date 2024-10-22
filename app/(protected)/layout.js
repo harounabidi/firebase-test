@@ -19,7 +19,7 @@ export default function Layout({ children }) {
 
   useEffect(() => {
     if (user == null) router.push("/")
-  }, [user])
+  }, [router, user])
 
   const handleLogout = () => {
     const auth = getAuth(firebase)
@@ -28,7 +28,7 @@ export default function Layout({ children }) {
   }
 
   return (
-    <>
+    <main className='mt-16'>
       <Header />
       <div className='flex h-full flex-col md:flex-row md:px-16'>
         <div className='lg:border-r hidden lg:flex lg:w-1/3 xl:w-1/4  py-12 pr-6 h-svh'>
@@ -64,6 +64,6 @@ export default function Layout({ children }) {
         <div className='w-full'>{children}</div>
       </div>
       <Footer />
-    </>
+    </main>
   )
 }

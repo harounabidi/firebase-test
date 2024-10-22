@@ -21,7 +21,7 @@ export default function Menu({ open, setOpen }) {
   return createPortal(
     <div
       // ref={menuRef}
-      className={`fixed md:hidden inset-x-0 border-y border-stone-200 top-20 inset-y-0 h-dvh w-full transform overflow-hidden bg-white pt-5 transition-all duration-200 ease-in-out md:w-80 origin-left ${
+      className={`fixed md:hidden inset-x-0 top-16 inset-y-0 h-dvh w-full transform overflow-hidden bg-background pt-5 transition-all duration-200 ease-in-out md:w-80 origin-left ${
         open ? "translate-x-0 opacity-1" : "-translate-x-full opacity-0"
       }`}>
       <div className='flex h-full flex-col'>

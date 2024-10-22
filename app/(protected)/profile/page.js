@@ -15,9 +15,7 @@ export default function Page() {
 
   return (
     <div className='p-6 lg:px-24 w-full lg:w-3/4  min-h-screen'>
-      <h1 className='mb-6 font-mona font-semibold text-lg md:text-2xl'>
-        Profile
-      </h1>
+      <h1 className='mb-6 font-semibold text-lg md:text-2xl'>Profile</h1>
 
       <button className='p-2 mb-8 cursor-pointer flex items-center justify-center bg-stone-200 rounded-full'>
         <User color='#a8a29d' size='50' />
