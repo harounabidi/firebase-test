@@ -3,7 +3,7 @@ import User from '@components/icons/user'
 
 export default function page() {
   return (
-    <div>
+    <div className="py-10">
       <h1 className="text-3xl font-semibold">Recipients</h1>
 
       <form className="flex items-center">

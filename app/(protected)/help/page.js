@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function page() {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center py-10">
       <h1 className="text-3xl font-semibold">Hi, How can we help?</h1>
       <form className="my-4 flex w-3/4 items-center">
         <input

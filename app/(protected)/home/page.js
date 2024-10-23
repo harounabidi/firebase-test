@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 export default function page() {
   return (
-    <div>
+    <div className="py-10">
       <h1>Totla balance</h1>
       <h2 className="text-4xl font-semibold">1,300.00 USD</h2>
 

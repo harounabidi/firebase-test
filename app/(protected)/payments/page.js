@@ -7,7 +7,7 @@ import USA from '@components/icons/usa'
 
 export default function page() {
   return (
-    <div>
+    <div className="py-10">
       <h1 className="text-3xl font-semibold">Payments</h1>
       <div className="flex items-center gap-2 py-5">
         <button className="rounded-full bg-stone-900 px-4 py-1 text-sm font-semibold text-white transition-colors duration-150 hover:bg-stone-700">

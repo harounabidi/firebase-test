@@ -14,9 +14,7 @@ export default function Page() {
   const [lastName, setLastName] = useState(user?.lastName)
 
   return (
-    <div>
-      {/* <h1 className="text-3xl font-semibold">Profile</h1> */}
-
+    <div className="py-10">
       <button className="mb-8 flex cursor-pointer items-center justify-center rounded-full bg-stone-200 p-2">
         <User color="#a8a29d" size="50" />
       </button>

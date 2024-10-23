@@ -8,7 +8,7 @@ import XCircle from '@components/icons/x-circle'
 
 export default function page() {
   return (
-    <div>
+    <div className="py-10">
       <h1 className="text-3xl font-semibold">Settings</h1>
       <ul className="flex flex-col gap-1 py-6">
         <li className="flex cursor-pointer items-center justify-between rounded-md px-3 py-3 transition-colors duration-150 hover:bg-stone-100">

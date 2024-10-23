@@ -26,9 +26,9 @@ export default function Sheet({ open, setOpen, children }) {
         <button
           aria-label="Close menu"
           onClick={() => setOpen(false)}
-          className={`absolute right-5 top-5 cursor-pointer`}
+          className={`absolute right-5 top-7 cursor-pointer`}
         >
-          <X size="2em" />
+          <X size="1em" />
         </button>
         {children}
       </div>

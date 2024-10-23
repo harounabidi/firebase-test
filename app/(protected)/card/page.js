@@ -1,6 +1,6 @@
 export default function page() {
   return (
-    <div>
+    <div className="py-10">
       <h1 className="text-3xl font-semibold">Card</h1>
       <div className="card w-80">
         <div className="card__content relative p-20 text-center font-bold text-white transition-transform duration-1000">

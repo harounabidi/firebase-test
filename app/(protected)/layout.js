@@ -33,7 +33,7 @@ export default function Layout({ children }) {
   return (
     <main className="flex gap-8 lg:mx-36">
       <Sidebar />
-      <div className="w-full px-6 py-6 lg:px-44 lg:py-20">
+      <div className="w-full px-6 py-6 lg:px-44 lg:py-10">
         <nav className="relative flex w-full items-center justify-end gap-4 lg:h-14 lg:px-0">
           <button
             onClick={() => {
