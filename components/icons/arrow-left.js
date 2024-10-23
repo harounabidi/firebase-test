@@ -1,12 +1,14 @@
-export default function Plus(props) {
+export default function ArrowLeft(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={props.size ?? '1em'}
-      height={props.size ?? '1em'}
-      className={props.className}
-      color={props.color ?? 'var(--primary)'}
+      width={props.size ?? '2em'}
+      height={props.size ?? '2em'}
       viewBox="0 0 24 24"
+      style={{
+        color: props.color ?? 'var(--primary)'
+      }}
+      className={props.className}
     >
       <path
         fill="none"
@@ -14,7 +16,7 @@ export default function Plus(props) {
         strokeLinecap="round"
         strokeLinejoin="round"
         // strokeWidth="1.5"
-        d="M18 12h-6m0 0H6m6 0V6m0 6v6"
+        d="M20 12H4m0 0l6-6m-6 6l6 6"
       />
     </svg>
   )

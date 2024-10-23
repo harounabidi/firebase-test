@@ -1,6 +1,9 @@
 import Arrows from '@components/icons/arrows'
+import BellOutline from '@components/icons/bell-outline'
 import ChevronDown from '@components/icons/chevron-down'
+import ChevronRight from '@components/icons/chevron-right'
 import Euro from '@components/icons/euro'
+import Message from '@components/icons/message'
 import USA from '@components/icons/usa'
 import vercel from '@public/images/vercel.webp'
 import Image from 'next/image'
@@ -8,10 +11,10 @@ import Image from 'next/image'
 export default function page() {
   return (
     <div className="py-10">
-      <h1>Totla balance</h1>
-      <h2 className="text-4xl font-semibold">1,300.00 USD</h2>
+      <h1 className="px-4">Totla balance</h1>
+      <h2 className="px-4 text-4xl font-semibold">1,300.00 USD</h2>
 
-      <div className="flex items-center gap-2 py-5">
+      <div className="flex items-center gap-2 px-4 py-5">
         <button className="rounded-full bg-stone-900 px-4 py-1 text-sm font-semibold text-white transition-colors duration-150 hover:bg-stone-700">
           Send
         </button>
@@ -23,7 +26,7 @@ export default function page() {
         </button>
       </div>
 
-      <h2 className="text-xl font-bold">Transactions</h2>
+      <h2 className="mt-4 px-4 text-xl font-bold">Transactions</h2>
 
       <ul className="flex flex-col gap-1 py-6">
         <li className="flex cursor-pointer items-center justify-between rounded-md px-3 py-3 transition-colors duration-150 hover:bg-stone-100">
@@ -79,13 +82,13 @@ export default function page() {
         </li>
       </ul>
 
-      <h2 className="mb-4 text-xl font-bold">Transfer calculator</h2>
+      <h2 className="my-4 px-4 text-xl font-bold">Transfer calculator</h2>
 
-      <div className="w-full rounded-xl bg-stone-100 p-5">
+      <div className="mx-4 rounded-xl bg-stone-100 p-5">
         <h1 className="text-xl font-semibold">1 USD = 0.9259 EUR</h1>
-        <div className="mt-4 flex gap-4">
+        <div className="mt-4 flex flex-col gap-4 xl:flex-row">
           <div className="flex-1">
-            <div className="h-full w-full border-b-[1.5px] border-r-[1.5px] border-stone-200"></div>
+            <div className="border-rborder-stone-200 h-full w-full border-b"></div>
           </div>
           <div className="flex flex-1 flex-col items-center gap-1">
             <div className="flex h-14 w-full items-center rounded-lg bg-background">
@@ -118,7 +121,7 @@ export default function page() {
               </div>
             </div>
 
-            <div className="mt-3 flex w-full flex-col items-center rounded-lg border-[1.5px] border-stone-200 py-4">
+            <div className="mt-3 flex w-full flex-col items-center rounded-xl border border-stone-200 py-4">
               <p className="text-stone-500">Included fees</p>
               <p className="text-stone-500">3.64 USD</p>
             </div>
@@ -129,6 +132,38 @@ export default function page() {
           </div>
         </div>
       </div>
+
+      <ul className="my-8 space-y-4">
+        <li className="flex cursor-pointer items-center justify-between gap-2 rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
+          <div className="flex items-center gap-4">
+            <div className="rounded-full bg-stone-100 stroke-[1.5px] p-2.5">
+              <Message size="1.8em" />
+            </div>
+
+            <div>
+              <p className="font-semibold">Give us feedback</p>
+            </div>
+          </div>
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
+        </li>
+
+        <li className="flex cursor-pointer items-center justify-between gap-2 rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
+          <div className="flex items-center gap-4">
+            <div className="rounded-full bg-stone-100 stroke-[1.5px] p-2.5">
+              <BellOutline size="1.8em" />
+            </div>
+
+            <div>
+              <p className="font-semibold">Get exchange rate updates</p>
+            </div>
+          </div>
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
+        </li>
+      </ul>
     </div>
   )
 }

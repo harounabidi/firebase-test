@@ -20,7 +20,7 @@ export default function Sidebar() {
           <Link
             href="/home"
             className={`flex w-full flex-col items-center stroke-[2px] px-3 py-3 transition-all duration-150 hover:stroke-[2px] hover:font-medium hover:text-stone-950 lg:flex-row lg:gap-2 ${
-              pathname === '/home'
+              pathname.split('/')[1] === 'home'
                 ? 'stroke-[2px] font-medium text-stone-950'
                 : 'stroke-[1.5px] text-stone-600'
             }`}
@@ -32,15 +32,15 @@ export default function Sidebar() {
 
         <li className="w-full cursor-pointer items-center rounded-md">
           <Link
-            href="/card"
+            href="/cards"
             className={`flex w-full flex-col items-center stroke-[2px] px-3 py-3 transition-all duration-150 hover:stroke-[2px] hover:font-medium hover:text-stone-950 lg:flex-row lg:gap-2 ${
-              pathname === '/card'
+              pathname.split('/')[1] === 'cards'
                 ? 'stroke-[2px] font-medium text-stone-950'
                 : 'stroke-[1.5px] text-stone-600'
             }`}
           >
             <CardOutline size="20" />
-            Card
+            Cards
           </Link>
         </li>
 
@@ -48,7 +48,7 @@ export default function Sidebar() {
           <Link
             href="/recipients"
             className={`flex w-full flex-col items-center stroke-[2px] px-3 py-3 transition-all duration-150 hover:stroke-[2px] hover:font-medium hover:text-stone-950 lg:flex-row lg:gap-2 ${
-              pathname === '/recipients'
+              pathname.split('/')[1] === 'recipients'
                 ? 'stroke-[2px] font-medium text-stone-950'
                 : 'stroke-[1.5px] text-stone-600'
             }`}
@@ -62,7 +62,7 @@ export default function Sidebar() {
           <Link
             href="/payments"
             className={`flex w-full flex-col items-center stroke-[2px] px-3 py-3 transition-all duration-150 hover:stroke-[2px] hover:font-medium hover:text-stone-950 lg:flex-row lg:gap-2 ${
-              pathname === '/payments'
+              pathname.split('/')[1] === 'payments'
                 ? 'stroke-[2px] font-medium text-stone-950'
                 : 'stroke-[1.5px] text-stone-600'
             }`}

@@ -9,9 +9,9 @@ import XCircle from '@components/icons/x-circle'
 export default function page() {
   return (
     <div className="py-10">
-      <h1 className="text-3xl font-semibold">Settings</h1>
+      <h1 className="px-4 text-3xl font-semibold">Settings</h1>
       <ul className="flex flex-col gap-1 py-6">
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-3 py-3 transition-colors duration-150 hover:bg-stone-100">
+        <li className="flex cursor-pointer items-center justify-between gap-2 rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <div className="rounded-full bg-stone-200 stroke-[1.5px] p-2.5">
               <Shield size="1.8em" />
@@ -24,10 +24,12 @@ export default function page() {
               </p>
             </div>
           </div>
-          <ChevronRight size="1.5em" />
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
         </li>
 
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-3 py-3 transition-colors duration-150 hover:bg-stone-100">
+        <li className="flex cursor-pointer items-center justify-between gap-2 rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <div className="rounded-full bg-stone-200 stroke-[1.5px] p-2.5">
               <BellOutline size="1.8em" />
@@ -41,10 +43,12 @@ export default function page() {
               </p>
             </div>
           </div>
-          <ChevronRight size="1.5em" />
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
         </li>
 
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-3 py-3 transition-colors duration-150 hover:bg-stone-100">
+        <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <div className="rounded-full bg-stone-200 stroke-[1.5px] p-2.5">
               <Appearance size="1.8em" />
@@ -55,10 +59,12 @@ export default function page() {
               <p className="text-sm text-stone-500">Light</p>
             </div>
           </div>
-          <ChevronRight size="1.5em" />
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
         </li>
 
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-3 py-3 transition-colors duration-150 hover:bg-stone-100">
+        <li className="flex cursor-pointer items-center justify-between gap-2 rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <div className="rounded-full bg-stone-200 stroke-[1.5px] p-2.5">
               <Globe size="1.8em" />
@@ -69,10 +75,12 @@ export default function page() {
               <p className="text-sm text-stone-500">English (US)</p>
             </div>
           </div>
-          <ChevronRight size="1.5em" />
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
         </li>
 
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-3 py-3 transition-colors duration-150 hover:bg-stone-100">
+        <li className="flex cursor-pointer items-center justify-between gap-2 rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <div className="rounded-full bg-stone-200 stroke-[1.5px] p-2.5">
               <ChartUp size="2em" />
@@ -85,10 +93,12 @@ export default function page() {
               </p>
             </div>
           </div>
-          <ChevronRight size="1.5em" />
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
         </li>
 
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-3 py-3 transition-colors duration-150 hover:bg-stone-100">
+        <li className="flex cursor-pointer items-center justify-between gap-2 rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <div className="rounded-full bg-stone-200 stroke-[1.5px] p-2.5">
               <XCircle size="1.8em" />
@@ -101,7 +111,9 @@ export default function page() {
               </p>
             </div>
           </div>
-          <ChevronRight size="1.5em" />
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
         </li>
       </ul>
     </div>

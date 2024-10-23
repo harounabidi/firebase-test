@@ -1,5 +1,6 @@
 import ArrowSync from '@components/icons/arrow-sync'
 import CalendarOutline from '@components/icons/calendar-outline'
+import ChartUp from '@components/icons/chart-up'
 import ChevronRight from '@components/icons/chevron-right'
 import Euro from '@components/icons/euro'
 import UK from '@components/icons/uk'
@@ -8,8 +9,8 @@ import USA from '@components/icons/usa'
 export default function page() {
   return (
     <div className="py-10">
-      <h1 className="text-3xl font-semibold">Payments</h1>
-      <div className="flex items-center gap-2 py-5">
+      <h1 className="px-4 text-3xl font-semibold">Payments</h1>
+      <div className="flex items-center gap-2 px-4 py-5">
         <button className="rounded-full bg-stone-900 px-4 py-1 text-sm font-semibold text-white transition-colors duration-150 hover:bg-stone-700">
           Send
         </button>
@@ -19,10 +20,10 @@ export default function page() {
       </div>
 
       <ul className="flex flex-col gap-1 py-6">
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-3 py-3 transition-colors duration-150 hover:bg-stone-100">
+        <li className="flex cursor-pointer items-center justify-between gap-2 rounded-md px-3 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <div className="rounded-full bg-stone-200 p-2">
-              <CalendarOutline />
+              <CalendarOutline size="1.8em" />
             </div>
 
             <div>
@@ -32,13 +33,15 @@ export default function page() {
               </p>
             </div>
           </div>
-          <ChevronRight size="1.5em" />
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
         </li>
 
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-3 py-3 transition-colors duration-150 hover:bg-stone-100">
+        <li className="flex cursor-pointer items-center justify-between gap-2 rounded-md px-3 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <div className="rounded-full bg-stone-200 p-2">
-              <ArrowSync />
+              <ArrowSync size="1.8em" />
             </div>
 
             <div>
@@ -48,14 +51,16 @@ export default function page() {
               </p>
             </div>
           </div>
-          <ChevronRight size="1.5em" />
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
         </li>
       </ul>
 
-      <h2 className="mt-8 text-xl font-semibold">Account details</h2>
+      <h2 className="mt-8 px-4 text-xl font-semibold">Account details</h2>
 
       <ul className="flex flex-col gap-1 py-6">
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-3 py-3 transition-colors duration-150 hover:bg-stone-100">
+        <li className="flex cursor-pointer items-center justify-between gap-2 rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <Euro size="2.5em" />
 
@@ -64,10 +69,12 @@ export default function page() {
               <p className="text-sm text-stone-500">IBAN, Swift/BIC</p>
             </div>
           </div>
-          <ChevronRight size="1.5em" />
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
         </li>
 
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-3 py-3 transition-colors duration-150 hover:bg-stone-100">
+        <li className="flex cursor-pointer items-center justify-between gap-2 rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <USA size="2.5em" />
 
@@ -78,10 +85,12 @@ export default function page() {
               </p>
             </div>
           </div>
-          <ChevronRight size="1.5em" />
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
         </li>
 
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-3 py-3 transition-colors duration-150 hover:bg-stone-100">
+        <li className="flex cursor-pointer items-center justify-between gap-2 rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <UK size="2.5em" />
 
@@ -92,11 +101,34 @@ export default function page() {
               </p>
             </div>
           </div>
-          <ChevronRight size="1.5em" />
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
         </li>
       </ul>
 
-      <h2 className="mt-8 text-xl font-semibold">Payment tools</h2>
+      <h2 className="mt-8 px-4 text-xl font-semibold">Payment tools</h2>
+
+      <ul className="flex flex-col gap-1 py-6">
+        <li className="flex cursor-pointer items-center justify-between gap-2 rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
+          <div className="flex items-center gap-4">
+            <div className="rounded-full bg-stone-200 stroke-[1.5px] p-2.5">
+              <ChartUp size="1.8em" />
+            </div>
+
+            <div>
+              <p className="font-semibold">Auto Conversions</p>
+              <p className="text-sm text-stone-500">
+                Convert money between your balances at your desired exchange
+                rate.
+              </p>
+            </div>
+          </div>
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
+        </li>
+      </ul>
     </div>
   )
 }

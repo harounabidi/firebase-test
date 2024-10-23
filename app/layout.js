@@ -8,12 +8,12 @@ const inter = Inter({
   variable: '--font-inter'
 })
 
-const roboto = Roboto({
-  weight: ['100', '300', '400', '500', '700', '900'],
-  subsets: ['latin'],
-  display: 'fallback',
-  variable: '--font-inter'
-})
+// const roboto = Roboto({
+//   weight: ['100', '300', '400', '500', '700', '900'],
+//   subsets: ['latin'],
+//   display: 'fallback',
+//   variable: '--font-inter'
+// })
 
 export const metadata = {
   title: 'Klark',

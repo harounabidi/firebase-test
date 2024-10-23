@@ -4,28 +4,30 @@ import User from '@components/icons/user'
 export default function page() {
   return (
     <div className="py-10">
-      <h1 className="text-3xl font-semibold">Recipients</h1>
+      <h1 className="px-4 text-3xl font-semibold">Recipients</h1>
 
-      <form className="flex items-center">
+      <form className="flex items-center px-4">
         <input
           type="search"
           name="search"
           id="search"
           placeholder="Name, email, or phone"
-          className="my-4 h-12 w-full rounded-full border border-stone-500 px-6 pl-12"
+          className="my-4 h-12 w-full rounded-full border border-stone-500 bg-background px-6 pl-12"
         />
         <button
           type="submit"
-          className="ml-2 flex h-12 w-fit items-center justify-center text-nowrap rounded-full border border-stone-500 p-3 px-6 font-semibold"
+          className="ml-2 hidden h-12 w-fit items-center justify-center text-nowrap rounded-full border border-stone-500 p-3 px-6 font-semibold md:flex"
         >
           Add recipient
         </button>
       </form>
 
-      <h2 className="my-5 w-full border-b border-stone-200">All</h2>
+      <h2 className="mx-4 my-5 w-full border-b border-stone-200 py-4 text-sm font-semibold text-stone-700">
+        All
+      </h2>
 
       <ul className="flex flex-col gap-1 py-6">
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-3 py-3 transition-colors duration-150 hover:bg-stone-100">
+        <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <div className="rounded-full bg-stone-100 p-2">
               <User color="#d6d3d1" />

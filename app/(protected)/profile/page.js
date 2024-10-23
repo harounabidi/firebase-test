@@ -1,84 +1,194 @@
 'use client'
 
 import User from '@components/icons/user'
+import Mask from '@components/ui/mask'
+import Modal from '@components/ui/modal'
+import Sheet from '@components/ui/sheet'
 import { useAuthContext } from '@providers/auth-provider'
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { useState } from 'react'
 
 export default function Page() {
   const { user } = useAuthContext()
-  const router = useRouter()
-
-  const [email, setEmail] = useState(user?.email)
-  const [firstName, setFirstName] = useState(user?.firstName)
-  const [lastName, setLastName] = useState(user?.lastName)
+  const [open, setOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
 
   return (
     <div className="py-10">
-      <button className="mb-8 flex cursor-pointer items-center justify-center rounded-full bg-stone-200 p-2">
-        <User color="#a8a29d" size="50" />
-      </button>
-
-      <input
-        className="h-14 w-full rounded-lg border border-stone-300 px-5"
-        onChange={(e) => setFirstName(e.target.value)}
-        value={firstName}
-        required
-        type="text"
-        name="firstName"
-        id="firstName"
-      />
-
-      <input
-        className="mt-4 h-14 w-full rounded-lg border border-stone-300 px-5"
-        onChange={(e) => setLastName(e.target.value)}
-        value={lastName}
-        required
-        type="text"
-        name="lastName"
-        id="lastName"
-      />
-
-      {user?.isEmailVerified ? (
-        <p
-          className="text-green-500"
-          style={{ fontSize: '0.8rem', marginTop: '0.5rem' }}
-        >
-          email is verified
-        </p>
-      ) : (
-        <p
-          className="text-red-500"
-          style={{ fontSize: '0.8rem', marginTop: '0.5rem' }}
-        >
-          * email is not verified
-        </p>
-      )}
-
-      <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
-        <input
-          className="h-14 w-full rounded-lg border border-stone-300 px-5"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-          required
-          type="email"
-          name="email"
-          id="email"
-        />
-
-        <button className="flex h-14 min-w-40 items-center justify-center gap-2 rounded-lg bg-stone-900 p-3 px-4 font-semibold text-white transition-colors hover:bg-stone-700 max-sm:w-full">
-          Verify email
+      <div className="mb-4 flex items-center gap-4 px-4">
+        <div className="flex cursor-pointer items-center justify-center rounded-full bg-stone-200 p-2">
+          <User color="#a8a29d" size="50" />
+        </div>
+        <button className="text-sm font-semibold underline">
+          Edit account photo
         </button>
       </div>
+      <div className="flex flex-col-reverse gap-4 px-4 lg:flex-row lg:justify-between">
+        <h2 className="text-xl font-semibold lg:text-2xl">
+          Personal informations
+        </h2>
 
-      {/* <p>{user?.status}</p> */}
+        <div className="mt-4 flex gap-2">
+          <button
+            onClick={() => setOpen(true)}
+            className="rounded-full border border-stone-600 px-3 py-1 text-sm font-semibold max-sm:flex-1 lg:hidden"
+          >
+            Edit details
+          </button>
 
-      {/* <button
-        onClick={handleLogout}
-        className='flex text-white px-4 font-semibold items-center gap-2 bg-red-300 p-3 rounded-full mt-8 transition-colors hover:bg-red-400'>
-        <LogoutOutline size='20' />
-        <span>Logout</span>
-      </button> */}
+          <button
+            onClick={() => setModalOpen(true)}
+            className="hidden rounded-full border border-stone-600 px-3 py-1 text-sm font-semibold max-sm:flex-1 lg:flex"
+          >
+            Edit details
+          </button>
+
+          <button
+            onClick={() => setOpen(true)}
+            className="rounded-full border border-stone-600 px-3 py-1 text-sm font-semibold max-sm:flex-1 lg:hidden"
+          >
+            Edit details
+          </button>
+
+          <button
+            onClick={() => setModalOpen(true)}
+            className="hidden rounded-full border border-stone-600 px-3 py-1 text-sm font-semibold max-sm:flex-1 lg:flex"
+          >
+            Edit details
+          </button>
+        </div>
+
+        <PasswordSheet open={open} setOpen={setOpen} />
+        <PasswordModal open={modalOpen} setOpen={setModalOpen} />
+      </div>
+      <div className="m-4 flex flex-col gap-4 rounded-xl border border-stone-300 p-6 text-sm lg:flex-row">
+        <div className="flex flex-1 flex-col items-start gap-4">
+          <div className="flex-1">
+            <p className="text-stone-600">Full legal first and middle names</p>
+            <p className="text-stone-600">{user?.firstName}</p>
+          </div>
+          <div>
+            <p className="text-stone-600">Full legal last name</p>
+            <p className="text-stone-600">{user?.lastName}</p>
+          </div>
+        </div>
+        <div className="flex flex-1 flex-col items-start gap-4">
+          <div>
+            <p className="text-stone-600">Date of birth</p>
+            <p className="text-stone-600">-</p>
+          </div>
+          <div>
+            <p className="text-stone-600">Phone</p>
+            <p className="text-stone-600">***</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 className="px-4 text-xl font-semibold lg:text-2xl">
+        Personal address
+      </h2>
+
+      <div className="m-4 flex flex-col gap-4 rounded-xl border border-stone-300 p-6 text-sm lg:flex-row">
+        <div className="flex flex-1 flex-col items-start gap-4">
+          <div className="flex-1">
+            <p className="text-stone-600">Address</p>
+            <p className="text-stone-600">***</p>
+          </div>
+          <div>
+            <p className="text-stone-600">Postal code</p>
+            <p className="text-stone-600">***</p>
+          </div>
+        </div>
+        <div className="flex flex-1 flex-col items-start gap-4">
+          <div>
+            <p className="text-stone-600">City</p>
+            <p className="text-stone-600">***</p>
+          </div>
+          <div>
+            <p className="text-stone-600">Country</p>
+            <p className="text-stone-600">-</p>
+          </div>
+        </div>
+      </div>
     </div>
+  )
+}
+
+function PasswordSheet({ open, setOpen }) {
+  return (
+    <>
+      <Sheet open={open} setOpen={setOpen}>
+        <div className="flex flex-col px-6 py-28">
+          <h3 className="text-center text-2xl font-semibold">
+            Enter your password
+          </h3>
+          <p className="my-4 text-center text-sm text-stone-500">
+            To access your account details, please enter your password.
+          </p>
+
+          <form>
+            <label htmlFor="password" className="font-semibold">
+              Your password
+            </label>
+
+            <input
+              type="password"
+              id="password"
+              className="my-2 h-12 w-full rounded-lg border border-stone-500 bg-background px-6"
+            />
+
+            <button
+              type="submit"
+              className="mt-4 w-full rounded-full bg-stone-900 px-4 py-3 text-sm font-semibold text-white transition-colors duration-150 hover:bg-stone-700"
+            >
+              Done
+            </button>
+          </form>
+
+          <Link href="/" className="mt-6 text-center font-semibold underline">
+            Forgot password?
+          </Link>
+        </div>
+      </Sheet>
+      <Mask visible={open} background="bg-black/20" />
+    </>
+  )
+}
+
+function PasswordModal({ open, setOpen }) {
+  return (
+    <Modal isOpen={open} onClose={() => setOpen(false)}>
+      <div className="flex flex-col px-6 py-10">
+        <h3 className="text-center text-2xl font-semibold">
+          Enter your password
+        </h3>
+        <p className="my-4 text-center text-sm text-stone-500">
+          To access your account details, please enter your password.
+        </p>
+
+        <form>
+          <label htmlFor="password" className="font-semibold">
+            Your password
+          </label>
+
+          <input
+            type="password"
+            id="password"
+            className="my-2 h-12 w-full rounded-lg border border-stone-500 bg-background px-6"
+          />
+
+          <button
+            type="submit"
+            className="mt-4 w-full rounded-full bg-stone-900 px-4 py-3 text-sm font-semibold text-white transition-colors duration-150 hover:bg-stone-700"
+          >
+            Done
+          </button>
+        </form>
+
+        <Link href="/" className="mt-6 text-center font-semibold underline">
+          Forgot password?
+        </Link>
+      </div>
+    </Modal>
   )
 }
