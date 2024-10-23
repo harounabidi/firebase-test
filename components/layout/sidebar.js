@@ -5,6 +5,7 @@ import Link from 'next/link'
 import logo from '@/public/images/logo.png'
 import { usePathname } from 'next/navigation'
 import UsersOutline from '@components/icons/users-outline'
+import Payment from '@components/icons/payment'
 
 export default function Sidebar() {
   const pathname = usePathname()
@@ -66,7 +67,7 @@ export default function Sidebar() {
                 : 'stroke-[1.5px] text-stone-600'
             }`}
           >
-            <CardOutline size="20" />
+            <Payment size="20" />
             Payments
           </Link>
         </li>
