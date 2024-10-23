@@ -3,7 +3,7 @@
 import { createPortal } from 'react-dom'
 import { useEffect, useRef, useState } from 'react'
 import useClickOutsideHandler from '@hooks/useClickOutside'
-import X from '@components/icons/X'
+import X from '@components/icons/close'
 
 export default function Sheet({ open, setOpen, children }) {
   const [mounted, setMounted] = useState(false)
