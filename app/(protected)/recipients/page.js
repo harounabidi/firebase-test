@@ -1,7 +1,5 @@
-import ChevronLeft from '@components/icons/chevron-left'
 import ChevronRight from '@components/icons/chevron-right'
 import User from '@components/icons/user'
-import Image from 'next/image'
 
 export default function page() {
   return (

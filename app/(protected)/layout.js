@@ -14,10 +14,13 @@ import LogoutOutline from '@components/icons/logout-outline'
 import Sidebar from '@components/layout/sidebar'
 import QuestionOutline from '@components/icons/question-outline'
 import BellOutline from '@components/icons/bell-outline'
+import Sheet from '@components/ui/sheet'
+import Mask from '@components/ui/mask'
+import Dropdown from '@components/ui/dropdown'
 
 export default function Layout({ children }) {
   const [dropdownOpen, setDropdownOpen] = useState(false)
-
+  const [menuOpen, setMenuOpen] = useState(false)
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen)
 
   const { user } = useAuthContext()
@@ -30,14 +33,62 @@ export default function Layout({ children }) {
   return (
     <main className="flex gap-8 lg:mx-36">
       <Sidebar />
-      <div className="w-full py-20 lg:px-44">
-        <nav className="relative flex h-14 w-full items-center justify-end gap-4 px-6 lg:px-0">
+      <div className="w-full px-6 py-6 lg:px-44 lg:py-20">
+        <nav className="relative flex w-full items-center justify-end gap-4 lg:h-14 lg:px-0">
           <button
-            onClick={toggleDropdown}
+            onClick={() => {
+              setMenuOpen(!menuOpen)
+            }}
             className="flex cursor-pointer items-center justify-center rounded-full bg-stone-100 stroke-[1.5px] p-2"
           >
             <BellOutline color="#78716c" size="30" />
           </button>
+
+          <Sheet open={menuOpen} setOpen={setMenuOpen}>
+            <div className="">
+              <h3 className="border-b border-stone-200 px-4 pb-4 text-lg font-semibold">
+                Inbox
+              </h3>
+
+              <div className="px-6 py-8">
+                <h2 className="border-b border-stone-200 pb-2">
+                  Notifications
+                </h2>
+              </div>
+
+              <ul className="space-y-6 px-6 py-3">
+                <li className="cursor-pointer space-y-2">
+                  <div className="flex items-center justify-between">
+                    <p className="text-lg font-semibold text-stone-600">
+                      Hello John, fees are changing
+                    </p>
+                    <p className="text-sm text-stone-500">05/16/2024</p>
+                  </div>
+                  <p className="text-sm text-stone-600">
+                    Fees for some routes got more expensive and others got
+                    cheaper. Tap to see a full list of updated fees and when
+                    they apply.
+                  </p>
+                </li>
+
+                <li className="cursor-pointer space-y-2">
+                  <div className="flex items-center justify-between">
+                    <p className="text-lg font-semibold text-stone-600">
+                      Hello John, fees are changing
+                    </p>
+                    <p className="text-sm text-stone-500">05/16/2024</p>
+                  </div>
+                  <p className="text-sm text-stone-600">
+                    Fees for some routes got more expensive and others got
+                    cheaper. Tap to see a full list of updated fees and when
+                    they apply.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </Sheet>
+
+          <Mask visible={menuOpen} background="bg-black/20" />
 
           <button
             onClick={toggleDropdown}

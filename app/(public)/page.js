@@ -7,6 +7,7 @@ import iphone2 from '@/public/images/i2.png'
 import Check from '@components/icons/check'
 import { animated, useSpring, useInView } from '@react-spring/web'
 import { useAuthContext } from '@providers/auth-provider'
+import Plus from '@components/icons/plus'
 
 export default function Home() {
   const { user } = useAuthContext()
@@ -160,8 +161,8 @@ function FeaturesSection() {
       style={props}
       className="my-4 flex w-full flex-col items-center gap-4 lg:px-20 lg:py-28"
     >
-      <div className="ml-auto flex items-center justify-center gap-4 bg-stone-900 p-6">
-        <Check color="white" />
+      <div className="ml-auto flex items-start justify-center gap-4 bg-stone-900 p-6">
+        <Plus size="3em" color="white" />
         <h3 className="text-3xl font-bold leading-snug text-white">
           French IBAN, physical and virtual cards in few minutes
         </h3>
