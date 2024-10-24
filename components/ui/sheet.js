@@ -21,10 +21,10 @@ export default function Sheet({ open, setOpen, children, title, vertical }) {
       className={`fixed inset-y-0 right-0 z-20 h-dvh w-full transform overflow-hidden bg-background pt-5 transition-all duration-200 ease-in-out md:w-1/2 lg:w-1/3 ${
         open
           ? vertical
-            ? 'translate-y-0'
+            ? 'max-sm:translate-y-0 md:translate-x-0'
             : 'translate-x-0'
           : vertical
-            ? 'translate-y-full'
+            ? 'max-sm:translate-y-full md:translate-x-full'
             : 'translate-x-full'
       }`}
     >

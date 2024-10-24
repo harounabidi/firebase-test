@@ -18,6 +18,7 @@ import Sheet from '@components/ui/sheet'
 import Mask from '@components/ui/mask'
 import HomeOutline from '@components/icons/home-outline'
 import ArrowLeft from '@components/icons/arrow-left'
+import Tabbar from '@components/layout/tabbar'
 
 export default function Layout({ children }) {
   const [dropdownOpen, setDropdownOpen] = useState(false)
@@ -39,6 +40,7 @@ export default function Layout({ children }) {
   return (
     <main className="flex gap-8 lg:mx-10 xl:mx-36">
       <Sidebar />
+      <Tabbar />
       <div className="w-full py-6 lg:py-10 lg:pl-16 xl:pl-44">
         <nav
           className={`relative flex w-full items-center px-4 lg:h-14 lg:px-0 ${
