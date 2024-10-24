@@ -22,9 +22,11 @@ export default function page() {
         </button>
       </form>
 
-      <h2 className="mx-4 my-5 w-full border-b border-stone-200 py-4 text-sm font-semibold text-stone-700">
-        All
-      </h2>
+      <div className="px-4">
+        <h2 className="my-5 w-full border-b border-stone-200 py-4 text-sm font-semibold text-stone-700">
+          All
+        </h2>
+      </div>
 
       <ul className="flex flex-col gap-1 py-6">
         <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">

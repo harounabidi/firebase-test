@@ -29,19 +29,14 @@ export default function Modal({ isOpen, onClose, title, children }) {
     <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black bg-opacity-20 p-4">
       <div
         ref={modalRef}
-        className="relative w-full max-w-md transform overflow-hidden rounded-xl bg-white p-6 text-left shadow-xl transition-all"
+        className="relative w-full max-w-xl transform overflow-hidden rounded-xl bg-white p-6 text-left shadow-xl transition-all"
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
         tabIndex={-1}
       >
         <div className="absolute right-4 top-4">
-          <button
-            variant="ghost"
-            size="icon"
-            onClick={onClose}
-            aria-label="Close modal"
-          >
+          <button onClick={onClose} aria-label="Close modal">
             <X className="h-4 w-4" />
           </button>
         </div>

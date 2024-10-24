@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function page() {
   return (
-    <div className="py-10">
+    <div className="py-10 pb-24">
       <h1 className="px-4 text-3xl font-semibold">Cards</h1>
 
       <div className="my-8 flex items-center gap-4 px-4">

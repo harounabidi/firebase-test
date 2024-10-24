@@ -1,29 +1,87 @@
+'use client'
+
 import Arrows from '@components/icons/arrows'
+import Bank from '@components/icons/bank'
 import BellOutline from '@components/icons/bell-outline'
 import ChevronDown from '@components/icons/chevron-down'
 import ChevronRight from '@components/icons/chevron-right'
 import Euro from '@components/icons/euro'
 import Message from '@components/icons/message'
+import UK from '@components/icons/uk'
 import USA from '@components/icons/usa'
 import vercel from '@public/images/vercel.webp'
 import Image from 'next/image'
+import Chart from '@components/icons/chart'
+import { useState } from 'react'
+import FeedbackSheet from '@components/ui/feedback-sheet'
+import FeedbackModal from '@components/ui/feedback-modal'
 
-export default function page() {
+export default function Page() {
+  const [feedbackOpen, setFeedbackOpen] = useState(false)
+  const [feedbackModalOpen, setFeedbackModalOpen] = useState(false)
+
   return (
     <div className="py-10">
       <h1 className="px-4">Totla balance</h1>
-      <h2 className="px-4 text-4xl font-semibold">1,300.00 USD</h2>
+      <h2 className="px-4 text-4xl font-semibold">1,366.75 EUR</h2>
 
       <div className="flex items-center gap-2 px-4 py-5">
         <button className="rounded-full bg-stone-900 px-4 py-1 text-sm font-semibold text-white transition-colors duration-150 hover:bg-stone-700">
           Send
         </button>
-        <button className="rounded-full bg-stone-200 px-4 py-1 text-sm font-semibold transition-colors duration-150 hover:bg-stone-300">
+        <button className="rounded-full bg-stone-100 px-4 py-1 text-sm font-semibold transition-colors duration-150 hover:bg-stone-200">
           Add money
         </button>
-        <button className="rounded-full bg-stone-200 px-4 py-1 text-sm font-semibold transition-colors duration-150 hover:bg-stone-300">
+        <button className="rounded-full bg-stone-100 px-4 py-1 text-sm font-semibold transition-colors duration-150 hover:bg-stone-200">
           Request
         </button>
+      </div>
+
+      <div className="no-scrollbar flex items-center gap-4 overflow-x-auto px-4">
+        <div className="flex min-w-64 cursor-pointer flex-col gap-12 rounded-2xl bg-stone-100 p-4 hover:bg-stone-200">
+          <div className="flex items-center gap-2">
+            <Euro size="2.5em" />
+            <span className="text-lg font-semibold">EUR</span>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-3">
+              <Bank size="1.2em" className="stroke-[1.5px]" />
+              <span className="text-sm">·· 87300</span>
+            </div>
+            <span className="text-xl font-semibold">1,366.75</span>
+          </div>
+        </div>
+
+        <div className="flex min-w-64 cursor-pointer flex-col gap-12 rounded-2xl bg-stone-100 p-4 hover:bg-stone-200">
+          <div className="flex items-center gap-2">
+            <USA size="2.5em" />
+            <span className="text-lg font-semibold">USD</span>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-3">
+              <Bank size="1.2em" className="stroke-[1.5px]" />
+              <span className="text-sm">·· 35400</span>
+            </div>
+            <span className="text-xl font-semibold">0.00</span>
+          </div>
+        </div>
+
+        <div className="flex min-w-64 cursor-pointer flex-col gap-12 rounded-2xl bg-stone-100 p-4 hover:bg-stone-200">
+          <div className="flex items-center gap-2">
+            <UK size="2.5em" />
+            <span className="text-lg font-semibold">GBP</span>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-3">
+              <Bank size="1.2em" className="stroke-[1.5px]" />
+              <span className="text-sm">·· 56300</span>
+            </div>
+            <span className="text-xl font-semibold">0.00</span>
+          </div>
+        </div>
       </div>
 
       <h2 className="mt-4 px-4 text-xl font-bold">Transactions</h2>
@@ -86,9 +144,9 @@ export default function page() {
 
       <div className="mx-4 rounded-xl bg-stone-100 p-5">
         <h1 className="text-xl font-semibold">1 USD = 0.9259 EUR</h1>
-        <div className="mt-4 flex flex-col gap-4 xl:flex-row">
-          <div className="flex-1">
-            <div className="border-rborder-stone-200 h-full w-full border-b"></div>
+        <div className="mt-4 flex flex-col gap-4 sm:flex-row">
+          <div className="flex flex-1">
+            <Chart />
           </div>
           <div className="flex flex-1 flex-col items-center gap-1">
             <div className="flex h-14 w-full items-center rounded-lg bg-background">
@@ -134,7 +192,28 @@ export default function page() {
       </div>
 
       <ul className="my-8 space-y-4">
-        <li className="flex cursor-pointer items-center justify-between gap-2 rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
+        <li
+          onClick={() => setFeedbackOpen(!feedbackOpen)}
+          className="flex cursor-pointer items-center justify-between gap-2 rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100 lg:hidden"
+        >
+          <div className="flex items-center gap-4">
+            <div className="rounded-full bg-stone-100 stroke-[1.5px] p-2.5">
+              <Message size="1.8em" />
+            </div>
+
+            <div>
+              <p className="font-semibold">Give us feedback</p>
+            </div>
+          </div>
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
+        </li>
+
+        <li
+          onClick={() => setFeedbackModalOpen(true)}
+          className="hidden cursor-pointer items-center justify-between gap-2 rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100 lg:flex"
+        >
           <div className="flex items-center gap-4">
             <div className="rounded-full bg-stone-100 stroke-[1.5px] p-2.5">
               <Message size="1.8em" />
@@ -164,6 +243,9 @@ export default function page() {
           </div>
         </li>
       </ul>
+
+      <FeedbackSheet menuOpen={feedbackOpen} setMenuOpen={setFeedbackOpen} />
+      <FeedbackModal open={feedbackModalOpen} setOpen={setFeedbackModalOpen} />
     </div>
   )
 }
