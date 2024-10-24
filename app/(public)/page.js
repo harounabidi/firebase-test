@@ -89,7 +89,9 @@ function EasySection() {
     opacity: inView ? 1 : 0,
     y: inView ? 0 : 40,
     config: springConfig,
-    backgroundImage: "url('/images/gradient.webp')",
+    backgroundImage: "url('/images/gradient.svg')",
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'bottom',
     backgroundSize: 'cover'
   })
 

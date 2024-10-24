@@ -1,7 +1,11 @@
 'use client'
 
+import Bank from '@components/icons/bank'
 import CardOutline from '@components/icons/card-outline'
 import ChevronRight from '@components/icons/chevron-right'
+import Pen from '@components/icons/pen'
+import Redo from '@components/icons/redo'
+import SettingsOutline from '@components/icons/settings-outline'
 import Snow from '@components/icons/snow'
 import Mask from '@components/ui/mask'
 import Modal from '@components/ui/modal'
@@ -82,7 +86,7 @@ export default function Page() {
             className="hidden flex-col items-center justify-center gap-2 px-4 lg:flex"
           >
             <div className="w-fit rounded-full bg-stone-200 p-2.5">
-              <CardOutline size="30" />
+              <Snow size="30" />
             </div>
             <p className="text-sm font-semibold">Freeze card</p>
           </button>
@@ -106,34 +110,82 @@ export default function Page() {
       </div>
 
       <ul className="flex flex-col gap-1 py-4">
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-4 transition-colors duration-150 hover:bg-stone-100">
-          <p className="font-semibold">View recent card transactions</p>
-          <ChevronRight size="1.5em" />
+        <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
+          <div className="flex items-center gap-4">
+            <div className="hidden rounded-full bg-stone-200 stroke-[1.5px] p-2.5 md:block">
+              <Redo size="1.6em" />
+            </div>
+
+            <p className="font-semibold">View recent card transactions</p>
+          </div>
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
         </li>
 
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-4 transition-colors duration-150 hover:bg-stone-100">
-          <p className="font-semibold">Unblock PIN</p>
-          <ChevronRight size="1.5em" />
+        <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
+          <div className="flex items-center gap-4">
+            <div className="hidden rounded-full bg-stone-200 stroke-[1.5px] p-2.5 md:block">
+              <Redo size="1.6em" />
+            </div>
+
+            <p className="font-semibold">Unblock PIN</p>
+          </div>
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
         </li>
 
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-4 transition-colors duration-150 hover:bg-stone-100">
-          <p className="font-semibold">Manage payment methods</p>
-          <ChevronRight size="1.5em" />
+        <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
+          <div className="flex items-center gap-4">
+            <div className="hidden rounded-full bg-stone-200 stroke-[1.5px] p-2.5 md:block">
+              <SettingsOutline size="1.6em" />
+            </div>
+
+            <p className="font-semibold">Manage payment method</p>
+          </div>
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
         </li>
 
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-4 transition-colors duration-150 hover:bg-stone-100">
-          <p className="font-semibold">Edit card</p>
-          <ChevronRight size="1.5em" />
+        <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
+          <div className="flex items-center gap-4">
+            <div className="hidden rounded-full bg-stone-200 stroke-[1.5px] p-2.5 md:block">
+              <Pen size="1.6em" />
+            </div>
+
+            <p className="font-semibold">Edit card</p>
+          </div>
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
         </li>
 
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-4 transition-colors duration-150 hover:bg-stone-100">
-          <p className="font-semibold">Find an ATM</p>
-          <ChevronRight size="1.5em" />
+        <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
+          <div className="flex items-center gap-4">
+            <div className="hidden rounded-full bg-stone-200 stroke-[1.5px] p-2.5 md:block">
+              <Bank size="1.6em" />
+            </div>
+
+            <p className="font-semibold">Find an ATM</p>
+          </div>
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
         </li>
 
-        <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-4 transition-colors duration-150 hover:bg-stone-100">
-          <p className="font-semibold">Replace car</p>
-          <ChevronRight size="1.5em" />
+        <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
+          <div className="flex items-center gap-4">
+            <div className="hidden rounded-full bg-stone-200 stroke-[1.5px] p-2.5 md:block">
+              <CardOutline size="1.6em" />
+            </div>
+
+            <p className="font-semibold">Replace card</p>
+          </div>
+          <div className="w-fit">
+            <ChevronRight size="1.5em" />
+          </div>
         </li>
       </ul>
 
