@@ -144,10 +144,22 @@ export default function Page() {
 
       <div className="mx-4 rounded-xl bg-stone-100 p-5">
         <h1 className="text-xl font-semibold">1 USD = 0.9259 EUR</h1>
-        <div className="mt-4 flex flex-col gap-4 sm:flex-row">
-          <div className="flex flex-1">
-            <Chart />
+        <div className="mt-4 flex flex-col gap-6 sm:flex-row">
+          <div className="flex flex-row gap-5">
+            <div className="h-full space-y-6 border-b border-r border-b-stone-200 border-r-stone-200">
+              <Chart />
+              <div className="flex flex-row items-start justify-between">
+                <p className="text-sm text-stone-500">Sept 24</p>
+                <p className="text-sm text-stone-500">Today</p>
+              </div>
+            </div>
+            <div className="flex flex-col items-start justify-between">
+              <p className="text-sm text-stone-500">0.93</p>
+              <p className="text-sm text-stone-500">0.91</p>
+              <p className="text-sm text-stone-500">0.89</p>
+            </div>
           </div>
+
           <div className="flex flex-1 flex-col items-center gap-1">
             <div className="flex h-14 w-full items-center rounded-lg bg-background">
               <input

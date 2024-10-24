@@ -8,9 +8,12 @@ export default function Error({ error, reset }) {
   }, [error])
 
   return (
-    <div className="flex h-screen w-full items-center justify-center">
-      <h1 className="text-4xl font-semibold">Error</h1>
-      <button className="ml-4 text-blue-500" onClick={reset}>
+    <div className="flex h-screen w-full flex-col items-center justify-center gap-4">
+      <h1 className="text-2xl font-semibold">Error</h1>
+      <button
+        className="rounded-full bg-stone-900 px-5 py-2 text-white"
+        onClick={reset}
+      >
         Reset
       </button>
     </div>
