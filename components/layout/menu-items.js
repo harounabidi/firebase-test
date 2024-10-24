@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { links } from "./nav-list-items"
-import { animated, useTrail } from "@react-spring/web"
-import { useAuthContext } from "@providers/auth-provider"
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { links } from './nav-list-items'
+import { animated, useTrail } from '@react-spring/web'
+import { useAuthContext } from '@providers/auth-provider'
 
 export default function MenuItems({ onItemClick, isOpen }) {
   const [animationKey, setAnimationKey] = useState(0)
@@ -12,8 +12,8 @@ export default function MenuItems({ onItemClick, isOpen }) {
   const { user } = useAuthContext()
 
   useEffect(() => {
-    if (user) links.find((item) => item.link === "/signin").active = false
-  }, [])
+    if (user) links.find((item) => item.link === '/signin').active = false
+  }, [user])
 
   const activeLinks = links.filter((item) => item.active)
 
@@ -28,11 +28,11 @@ export default function MenuItems({ onItemClick, isOpen }) {
     to: { opacity: 1, x: 0 },
     config: { mass: 1, tension: 400, friction: 30 },
     reset: true,
-    key: animationKey,
+    key: animationKey
   })
 
   return (
-    <ul className='flex-grow pt-4'>
+    <ul className="flex-grow pt-4">
       {trail.map((props, index) => {
         const item = activeLinks[index]
         return (
@@ -40,8 +40,9 @@ export default function MenuItems({ onItemClick, isOpen }) {
             <Link
               href={item.link}
               aria-label={item.title}
-              className='flex w-full items-center gap-3 px-8 py-3 hover:bg-primary/5'
-              onClick={onItemClick}>
+              className="hover:bg-primary/5 flex w-full items-center gap-3 px-8 py-3"
+              onClick={onItemClick}
+            >
               {item.title}
             </Link>
           </animated.li>

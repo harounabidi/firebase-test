@@ -2,8 +2,8 @@
 
 import User from '@components/icons/user'
 import Modal from '@components/ui/modal'
-import PasswordModal from '@components/ui/password-modal'
-import PasswordSheet from '@components/ui/password-sheet'
+import PasswordModal from '@components/ui/profile-password-modal'
+import PasswordSheet from '@components/ui/profile-password-sheet'
 import { useAuthContext } from '@providers/auth-provider'
 import Link from 'next/link'
 import { useState } from 'react'

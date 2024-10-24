@@ -47,13 +47,13 @@ function HeroSection({ user }) {
       style={props}
       className="flex w-full flex-col items-center px-6 lg:px-20"
     >
-      <h1 className="pb-8 text-center font-inter text-5xl font-black leading-tight md:text-7xl lg:w-2/3">
-        Discover new solutions for your business with Klark
+      <h1 className="py-8 text-center font-inter text-5xl font-black leading-tight md:text-7xl lg:w-4/5 lg:text-8xl xl:text-9xl">
+        Discover new solutions for your business
       </h1>
 
-      <p className="text-center text-stone-700 lg:max-w-2xl lg:text-xl">
-        More than a corporate bank account, a real strategic team mate that your
-        business need.
+      <p className="text-center font-semibold text-stone-700 md:w-1/3 lg:text-xl">
+        <span className="font-black">Klark</span> is more than a corporate bank
+        account, a real strategic team mate that your business need.
       </p>
 
       <div className="flex items-center justify-center gap-4">
@@ -161,7 +161,7 @@ function FeaturesSection() {
     <animated.section
       ref={ref}
       style={props}
-      className="my-4 flex w-full flex-col items-center gap-4 lg:px-20 lg:py-28"
+      className="my-4 flex w-full flex-col items-center gap-4 lg:px-20 lg:pb-28"
     >
       <div className="ml-auto flex items-start justify-center gap-4 bg-stone-900 p-6">
         <Plus size="3em" color="white" />

@@ -3,14 +3,16 @@
 import Bank from '@components/icons/bank'
 import CardOutline from '@components/icons/card-outline'
 import ChevronRight from '@components/icons/chevron-right'
+import KeyOutline from '@components/icons/key-outline'
 import Pen from '@components/icons/pen'
 import Redo from '@components/icons/redo'
 import SettingsOutline from '@components/icons/settings-outline'
 import Snow from '@components/icons/snow'
-import Mask from '@components/ui/mask'
-import Modal from '@components/ui/modal'
-import Sheet from '@components/ui/sheet'
-import Link from 'next/link'
+import Visa from '@components/icons/visa'
+import PasswordCardModal from '@components/ui/card-password-modal'
+import PasswordCardSheet from '@components/ui/card-password-sheet'
+import chip from '@public/images/chip.svg'
+import Image from 'next/image'
 import { useState } from 'react'
 
 export default function Page() {
@@ -27,26 +29,17 @@ export default function Page() {
       </h2>
 
       <div className="flex flex-col md:flex-row">
-        <div className="my-8 flex items-center justify-center px-4">
-          <div className="card w-full lg:w-80">
-            <div className="card__content relative h-52 p-20 text-center font-bold text-white transition-transform duration-1000">
-              <div className="card__front absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center rounded-lg bg-pink-600 p-8">
-                <h2>Front</h2>
-              </div>
-              <div className="card__back absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center rounded-lg bg-teal-500 p-8">
-                <h2>Back</h2>
-              </div>
-            </div>
-          </div>
+        <div className="my-8 flex items-center justify-center px-8">
+          <VisaCard />
         </div>
 
-        <div className="my-8 flex items-center justify-between px-4">
+        <div className="flex items-center justify-between px-4">
           <button
             onClick={() => setModalOpen(true)}
             className="hidden flex-col items-center justify-center gap-2 px-4 lg:flex"
           >
-            <div className="w-fit rounded-full bg-stone-200 p-2.5">
-              <CardOutline size="30" />
+            <div className="w-fit rounded-full bg-stone-800 p-2.5 text-white">
+              <KeyOutline size="30" />
             </div>
             <p className="text-sm font-semibold">Show PIN</p>
           </button>
@@ -55,8 +48,8 @@ export default function Page() {
             onClick={() => setSheetOpen(true)}
             className="flex flex-col items-center justify-center gap-2 px-4 lg:hidden"
           >
-            <div className="w-fit rounded-full bg-stone-200 p-2.5">
-              <CardOutline size="30" />
+            <div className="w-fit rounded-full bg-stone-800 p-2.5 text-white">
+              <KeyOutline size="30" />
             </div>
             <p className="text-sm font-semibold">Show PIN</p>
           </button>
@@ -65,7 +58,7 @@ export default function Page() {
             onClick={() => setModalOpen(true)}
             className="hidden flex-col items-center justify-center gap-2 px-4 lg:flex"
           >
-            <div className="w-fit rounded-full bg-stone-200 p-2.5">
+            <div className="w-fit rounded-full bg-stone-800 p-2.5 text-white">
               <CardOutline size="30" />
             </div>
             <p className="text-sm font-semibold">Card details</p>
@@ -75,7 +68,7 @@ export default function Page() {
             onClick={() => setSheetOpen(true)}
             className="flex flex-col items-center justify-center gap-2 px-4 lg:hidden"
           >
-            <div className="w-fit rounded-full bg-stone-200 p-2.5">
+            <div className="w-fit rounded-full bg-stone-800 p-2.5 text-white">
               <CardOutline size="30" />
             </div>
             <p className="text-sm font-semibold">Card details</p>
@@ -85,7 +78,7 @@ export default function Page() {
             onClick={() => setModalOpen(true)}
             className="hidden flex-col items-center justify-center gap-2 px-4 lg:flex"
           >
-            <div className="w-fit rounded-full bg-stone-200 p-2.5">
+            <div className="w-fit rounded-full bg-stone-800 p-2.5 text-white">
               <Snow size="30" />
             </div>
             <p className="text-sm font-semibold">Freeze card</p>
@@ -95,7 +88,7 @@ export default function Page() {
             onClick={() => setSheetOpen(true)}
             className="flex flex-col items-center justify-center gap-2 px-4 lg:hidden"
           >
-            <div className="w-fit rounded-full bg-stone-200 stroke-[1.2px] p-2.5">
+            <div className="w-fit rounded-full bg-stone-800 stroke-[1.2px] p-2.5 text-white">
               <Snow size="30" />
             </div>
             <p className="text-sm font-semibold">Freeze card</p>
@@ -113,7 +106,7 @@ export default function Page() {
         <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <div className="hidden rounded-full bg-stone-200 stroke-[1.5px] p-2.5 md:block">
-              <Redo size="1.6em" />
+              <Redo size="1.8em" />
             </div>
 
             <p className="font-semibold">View recent card transactions</p>
@@ -126,7 +119,7 @@ export default function Page() {
         <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <div className="hidden rounded-full bg-stone-200 stroke-[1.5px] p-2.5 md:block">
-              <Redo size="1.6em" />
+              <Redo size="1.8em" />
             </div>
 
             <p className="font-semibold">Unblock PIN</p>
@@ -139,7 +132,7 @@ export default function Page() {
         <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <div className="hidden rounded-full bg-stone-200 stroke-[1.5px] p-2.5 md:block">
-              <SettingsOutline size="1.6em" />
+              <SettingsOutline size="1.8em" />
             </div>
 
             <p className="font-semibold">Manage payment method</p>
@@ -152,7 +145,7 @@ export default function Page() {
         <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <div className="hidden rounded-full bg-stone-200 stroke-[1.5px] p-2.5 md:block">
-              <Pen size="1.6em" />
+              <Pen size="1.8em" />
             </div>
 
             <p className="font-semibold">Edit card</p>
@@ -165,7 +158,7 @@ export default function Page() {
         <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <div className="hidden rounded-full bg-stone-200 stroke-[1.5px] p-2.5 md:block">
-              <Bank size="1.6em" />
+              <Bank size="1.8em" />
             </div>
 
             <p className="font-semibold">Find an ATM</p>
@@ -178,7 +171,7 @@ export default function Page() {
         <li className="flex cursor-pointer items-center justify-between rounded-md px-4 py-3 transition-colors duration-150 hover:bg-stone-100">
           <div className="flex items-center gap-4">
             <div className="hidden rounded-full bg-stone-200 stroke-[1.5px] p-2.5 md:block">
-              <CardOutline size="1.6em" />
+              <CardOutline size="1.8em" />
             </div>
 
             <p className="font-semibold">Replace card</p>
@@ -189,87 +182,21 @@ export default function Page() {
         </li>
       </ul>
 
-      <PasswordModal open={modalOpen} setOpen={setModalOpen} />
-      <PasswordSheet open={sheetOpen} setOpen={setSheetOpen} />
+      <PasswordCardModal open={modalOpen} setOpen={setModalOpen} />
+      <PasswordCardSheet open={sheetOpen} setOpen={setSheetOpen} />
     </div>
   )
 }
 
-function PasswordSheet({ open, setOpen }) {
+function VisaCard() {
   return (
-    <>
-      <Sheet open={open} setOpen={setOpen}>
-        <div className="flex flex-col px-6 py-28">
-          <h3 className="text-center text-2xl font-semibold">
-            Enter your password
-          </h3>
-          <p className="my-4 text-center text-sm text-stone-500">
-            To access your account details, please enter your password.
-          </p>
-
-          <form>
-            <label htmlFor="password" className="font-semibold">
-              Your password
-            </label>
-
-            <input
-              type="password"
-              id="password"
-              className="my-2 h-12 w-full rounded-lg border border-stone-500 bg-background px-6"
-            />
-
-            <button
-              type="submit"
-              className="mt-4 w-full rounded-full bg-stone-900 px-4 py-3 text-sm font-semibold text-white transition-colors duration-150 hover:bg-stone-700"
-            >
-              Done
-            </button>
-          </form>
-
-          <Link href="/" className="mt-6 text-center font-semibold underline">
-            Forgot password?
-          </Link>
+    <div className="w-full lg:w-80">
+      <div className="relative h-52 rounded-xl bg-stone-800 text-center font-bold text-white shadow-xl">
+        <div className="absolute bottom-0 right-5 flex flex-col items-end text-white">
+          <Image src={chip} alt="chip" width={35} height={35} />
+          <Visa size="4em" />
         </div>
-      </Sheet>
-      <Mask visible={open} background="bg-black/20" />
-    </>
-  )
-}
-
-function PasswordModal({ open, setOpen }) {
-  return (
-    <Modal isOpen={open} onClose={() => setOpen(false)}>
-      <div className="flex flex-col px-6 py-10">
-        <h3 className="text-center text-2xl font-semibold">
-          Enter your password
-        </h3>
-        <p className="my-4 text-center text-sm text-stone-500">
-          To access your account details, please enter your password.
-        </p>
-
-        <form>
-          <label htmlFor="password" className="font-semibold">
-            Your password
-          </label>
-
-          <input
-            type="password"
-            id="password"
-            className="my-2 h-12 w-full rounded-lg border border-stone-500 bg-background px-6"
-          />
-
-          <button
-            type="submit"
-            className="mt-4 w-full rounded-full bg-stone-900 px-4 py-3 text-sm font-semibold text-white transition-colors duration-150 hover:bg-stone-700"
-          >
-            Done
-          </button>
-        </form>
-
-        <Link href="/" className="mt-6 text-center font-semibold underline">
-          Forgot password?
-        </Link>
       </div>
-    </Modal>
+    </div>
   )
 }

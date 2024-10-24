@@ -23,6 +23,24 @@ export default function Navbar({ menuOpen, setMenuOpen }) {
         </Link>
       </div>
 
+      <ul className="hidden items-center justify-center gap-6 md:flex">
+        <li>
+          <Link href="/about" className="text-sm font-semibold">
+            About
+          </Link>
+        </li>
+        <li>
+          <Link href="/#contact" className="text-sm font-semibold">
+            Contact
+          </Link>
+        </li>
+        <li>
+          <Link href="/faq" className="text-sm font-semibold">
+            FAQ
+          </Link>
+        </li>
+      </ul>
+
       <div className="flex gap-2">
         <Link
           href="/signin"
